@@ -1,0 +1,70 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #0033A0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.card {
+    background: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 40px 25px;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+img.logo {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 1em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+}
+
+.button {
+    display: inline-block;
+    background-color: #0033A0;
+    color: white;
+    text-decoration: none;
+    padding: 14px 0;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 90%;
+    max-width: 340px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+    background-color: #00247D;
+}
+
+.tip {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.75em;
+    color: #aaa;
+}
