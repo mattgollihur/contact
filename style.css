@@ -17,63 +17,55 @@ body {
     padding: 0;
 }
 
-/* The Card Container */
+/* Card Container, now with tighter layout */
 .card {
     background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 8px 28px rgba(32,102,172,0.14);
-    padding: 40px 25px;
+    box-shadow: 0 6px 14px rgba(32,102,172,0.12);
+    padding: 25px 12px;
     width: 100%;
-    max-width: 420px;
+    max-width: 380px;
     box-sizing: border-box;
     text-align: center;
-    margin: 40px 0;
+    margin: 22px 0;
 }
 
 /* Profile Photo Enhancement */
 img.logo {
-    width: 90px;
-    margin-bottom: 20px;
+    width: 70px;
+    margin-bottom: 14px;
     border-radius: 50%;
-    box-shadow: 0 2px 12px rgba(32,102,172,0.18);
+    box-shadow: 0 2px 9px rgba(32,102,172,0.14);
     border: 2px solid #2066AC;
 }
 
-/* Divider lines (horizontal) */
+/* Divider lines - reduced vertical space */
 .hr-section {
     border: none;
     border-top: 1px solid #e2e9f3;
-    margin: 24px 0;
+    margin: 15px 0;
 }
 
 .footer-divider {
     border: none;
     border-top: 1px solid #dde3ea;
-    margin: 30px 0 14px 0;
+    margin: 20px 0 10px 0;
 }
 
-/* Name and Title Typographic Hierarchy */
+/* Name and Title - Compact sizing */
 h1 {
-    font-size: 2em;
+    font-size: 1.36em;
     color: #2066AC;
-    margin: 0 0 14px 0;
+    margin: 0 0 9px 0;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 1.12em;
+    font-size: 0.98em;
     color: #555;
-    font-weight: normal;
-    margin: 0 0 20px 0;
-    font-style: normal;
-}
-
-.job-title-special {
-    font-style: italic;
-    color: #0033A0;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    margin: 0 0 13px 0;
 }
 
 /* Contact Block Container */
@@ -84,12 +76,12 @@ h2 {
 }
 
 .contact-item {
-    font-size: 1em;
+    font-size: 0.95em;
     color: #000000;
     text-align: center;
     margin: 0;
-    line-height: 1.45;
-    margin-bottom: 10px;
+    line-height: 1.27;
+    margin-bottom: 7px;
 }
 
 .contact-item a {
@@ -102,55 +94,65 @@ h2 {
     text-decoration: underline;
 }
 
-/* Service Area Notes */
+/* Service Area Notes - slightly reduced size */
 .service-area {
-    font-size: 0.98em;
+    font-size: 0.87em;
     color: #555;
     text-align: center;
     margin: 0;
-    margin-top: 0;
-    margin-bottom: 0;
     font-weight: 400;
     letter-spacing: 0.2px;
 }
 
-/* Button / Link Styling */
+/* Button / Link Styling - smaller/more compact */
 .button {
     display: inline-block;
     background-color: #2066AC;
     color: white;
     text-decoration: none;
-    padding: 16px 0;
-    margin: 10px 0;
+    padding: 12px 0;
+    margin: 6px 0;
     border-radius: 8px;
-    font-size: 1.04em;
-    width: 90%;
-    max-width: 340px;
+    font-size: 0.95em;
+    width: 92%;
+    max-width: 300px;
     transition: background-color 0.2s, box-shadow 0.2s, transform 0.18s;
-    box-shadow: 0 2px 10px rgba(32,102,172,0.13);
+    box-shadow: 0 1px 7px rgba(32,102,172,0.12);
 }
 
 .button:hover {
     background-color: #1A5289;
-    box-shadow: 0 4px 20px rgba(32,102,172,0.17);
-    transform: scale(1.04);
+    box-shadow: 0 2px 12px rgba(32,102,172,0.17);
+    transform: scale(1.03);
 }
 
 /* Footer and Separation */
 footer {
-    font-size: 0.78em;
+    font-size: 0.7em;
     color: #a0a9b8;
     text-align: center;
     margin: 0;
 }
 
-/* Responsive tweaks for smaller devices */
-@media (max-width: 500px) {
+/* Responsive tweaks for the smallest screens */
+@media (max-width: 400px) {
     .card {
-        padding: 22px 8px;
-        margin: 18px 0;
+        padding: 10px 2px;
+        margin: 10px 0;
+        max-width: 98vw;
     }
-    .background-accent {
-        padding: 0;
+    img.logo {
+        width: 55px;
+        margin-bottom: 8px;
+    }
+    h1 {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 0.85em;
+    }
+    .button {
+        font-size: 0.85em;
+        padding: 10px 0;
     }
 }
