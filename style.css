@@ -17,7 +17,7 @@ body {
     width: 100%;
     max-width: 420px;
     box-sizing: border-box;
-    text-align: center; 
+    text-align: center; /* Ensures all child block elements (like h1, h2, p) are centered by default */
 }
 
 img.logo {
@@ -25,49 +25,47 @@ img.logo {
     margin-bottom: 20px;
 }
 
+/* Consistent Vertical Spacing and Centering for all Text Blocks */
+
 h1 {
     font-size: 1.6em;
-    margin-bottom: 0.2em;
     color: #2066AC;
+    margin: 0; /* Remove default top/bottom margin */
+    margin-bottom: 10px; /* Consistent spacing after the name */
 }
 
 h2 {
     font-size: 1em;
     color: #555;
-    margin-top: 0;
-    margin-bottom: 1.5em; 
     font-weight: normal;
+    margin: 0; /* Remove default top/bottom margin */
+    margin-bottom: 20px; /* Larger spacing after the title before contacts */
 }
 
-/* Block to contain the contact information */
+/* Contact block container (still used to group the p tags) */
 .contact-details-block {
-    /* Set to a standard width, but the centering logic is now in .contact-item */
-    max-width: 380px; 
-    margin: 10px auto 10px auto; 
+    margin: 0 auto; 
     padding: 0; 
 }
 
-/* Styling for individual contact lines */
+/* Styling for individual contact lines (phone and email) */
 .contact-item {
     font-size: 0.95em; 
-    /* NEW: Center the contact information */
+    color: #000000; 
+    /* NEW: Ensure text is centered and remove all margins to control spacing from outside */
     text-align: center; 
-    
-    /* NEW: Remove the indentation margin (no more "tabbed" look) */
-    margin-left: 0; 
-    
-    margin-top: 0;
-    margin-bottom: 8px; 
+    margin: 0;
     line-height: 1.3; 
-    /* Removed white-space: nowrap since centering fixes the wrapping better in this simple format */
+    /* Consistent spacing between contact lines */
+    margin-bottom: 10px; 
 }
 
-/* REMOVED: .contact-item .label class is no longer needed */
-
 .contact-item a {
-    /* Contact text color remains the Zurich blue */
     color: #0033A0; 
     text-decoration: none;
+    /* This ensures the entire link text, including the very long email, can occupy the full space without wrapping, 
+       though centering should have solved it */
+    white-space: nowrap; 
 }
 
 .contact-item a:hover {
@@ -78,9 +76,10 @@ h2 {
 .service-area {
     font-size: 0.85em; 
     color: #555;
-    margin-top: 15px; 
-    margin-bottom: 25px; 
     text-align: center;
+    margin: 0; /* Remove default top/bottom margin */
+    margin-top: 20px; /* Consistent spacing above the service area text */
+    margin-bottom: 25px; /* Spacing before buttons */
 }
 
 
@@ -100,12 +99,6 @@ h2 {
 
 .button:hover {
     background-color: #1A5289;
-}
-
-.tip {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #666;
 }
 
 footer {
