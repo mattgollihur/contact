@@ -41,7 +41,8 @@ h2 {
 
 .button {
     display: inline-block;
-    background-color: #0033A0;
+    /* Updated to a lighter blue */
+    background-color: #337AFF; 
     color: white;
     text-decoration: none;
     padding: 14px 0;
@@ -54,7 +55,8 @@ h2 {
 }
 
 .button:hover {
-    background-color: #00247D;
+    /* Updated hover color to match the new, lighter base color */
+    background-color: #2B66CC;
 }
 
 .tip {
