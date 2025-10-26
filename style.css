@@ -39,10 +39,10 @@ h2 {
     font-weight: normal;
 }
 
-/* NEW: Separator Line Style */
+/* FIX 1: Added Separator Line Style */
 .separator-line {
-    width: 70%; /* Best width for centering and visibility */
-    height: 3px;
+    width: 75%; /* Slightly wider to match professional card appearance */
+    height: 2px;
     background-color: #2066AC;
     border-radius: 2px;
     margin: 15px auto; /* Centers the line and provides vertical space */
@@ -51,7 +51,7 @@ h2 {
 
 /* Block to contain and center the contact information wrapper */
 .contact-details-block {
-    /* Increased max-width to ensure the email address fits on one line */
+    /* FIX 3: Increased max-width to give the email enough room */
     max-width: 380px; 
     margin: -10px auto 10px auto; 
     padding: 0; 
@@ -60,24 +60,25 @@ h2 {
 /* Styling for individual contact lines */
 .contact-item {
     font-size: 0.95em; 
-    /* The link color remains blue, the overall text color is set to black to contrast the label */
+    /* Set color to black, but links will override this with blue */
     color: #000000; 
     text-align: left; 
     
-    /* Indentation: Pushes the text block further to the right to create the "tabbed" effect */
-    margin-left: 50px; 
+    /* FIX 3: Indentation: Increased margin to ensure a noticeable "tab" */
+    margin-left: 60px; 
     
     margin-top: 0;
-    margin-bottom: 5px; 
+    margin-bottom: 8px; /* Slightly more space between lines */
     line-height: 1.3; 
-    /* Added white-space to prevent the email line from wrapping */
+    /* FIX 3: Prevents the email line from wrapping */
     white-space: nowrap;
 }
 
+/* FIX 2: Explicitly set the label color to black */
 .contact-item .label {
-    /* Ensures the label is black, as requested */
     color: #000000;
-    font-weight: bold; /* Optional: adds distinction to the label */
+    font-weight: normal; 
+    /* Use 'normal' to ensure the link text stands out slightly */
 }
 
 .contact-item a {
