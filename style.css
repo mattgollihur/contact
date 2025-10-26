@@ -1,7 +1,8 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #ffffff;
-    color: #0033A0;
+    /* Removed color: #0033A0 here to let h1/buttons use the correct #2066AC, 
+       and h2/contact-info will use #555 or #0033A0 as set below */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,7 +13,7 @@ body {
 }
 
 .card {
-    /* CHANGED: Set to pure white (#ffffff) to match the body background */
+    /* Set to pure white (#ffffff) to match the body background */
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -30,6 +31,8 @@ img.logo {
 h1 {
     font-size: 1.6em;
     margin-bottom: 0.2em;
+    /* Ensure name is the key blue for consistency */
+    color: #2066AC;
 }
 
 h2 {
@@ -40,9 +43,36 @@ h2 {
     font-weight: normal;
 }
 
+/* NEW: Styling for phone number and email */
+.contact-info {
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    /* Use the darker Zurich blue for the links */
+    color: #0033A0; 
+}
+
+.contact-info a {
+    color: #0033A0;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* NEW: Styling for the service area note */
+.service-area {
+    font-size: 0.85em; 
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 25px; /* Adds necessary space before the buttons */
+}
+
+
 .button {
     display: inline-block;
-    /* Updated to the requested blue: #2066AC */
+    /* Uses the Zurich primary blue: #2066AC */
     background-color: #2066AC; 
     color: white;
     text-decoration: none;
@@ -56,7 +86,7 @@ h2 {
 }
 
 .button:hover {
-    /* Updated hover color to a slightly darker shade of the new base color (e.g., #1A5289) */
+    /* Slightly darker shade of the blue for the hover effect */
     background-color: #1A5289;
 }
 
