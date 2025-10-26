@@ -1,15 +1,14 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #ffffff;
-    /* Removed color: #0033A0 here to let h1/buttons use the correct #2066AC, 
-       and h2/contact-info will use #555 or #0033A0 as set below */
+    /* Removed color: #0033A0 here to let h1/buttons use the correct #2066AC */
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    text-align: center;
+    /* Removed text-align: center to allow finer control within the card */
 }
 
 .card {
@@ -21,6 +20,8 @@ body {
     width: 100%;
     max-width: 420px;
     box-sizing: border-box;
+    /* Keep everything inside the card centered by default */
+    text-align: center; 
 }
 
 img.logo {
@@ -43,13 +44,24 @@ h2 {
     font-weight: normal;
 }
 
-/* NEW: Styling for phone number and email */
+/* NEW: Block to left-align the contact information */
+.contact-details-block {
+    text-align: left;
+    /* Use a fixed width or maximum width to prevent it from spanning the whole card,
+       and set margins to center the block on the card */
+    max-width: 340px; 
+    margin: 0 auto;
+}
+
+/* Styling for phone number and email */
 .contact-info {
     font-size: 0.9em;
     margin-top: -10px;
     margin-bottom: 5px;
-    /* Use the darker Zurich blue for the links */
+    /* Use the darker Zurich blue for the text */
     color: #0033A0; 
+    /* Important: Remove center alignment applied from .card */
+    text-align: left;
 }
 
 .contact-info a {
@@ -61,12 +73,14 @@ h2 {
     text-decoration: underline;
 }
 
-/* NEW: Styling for the service area note */
+/* Styling for the service area note */
 .service-area {
     font-size: 0.85em; 
     color: #555;
     margin-top: 0;
     margin-bottom: 25px; /* Adds necessary space before the buttons */
+    /* Maintain center alignment for the area note */
+    text-align: center;
 }
 
 
@@ -100,4 +114,5 @@ footer {
     margin-top: 30px;
     font-size: 0.75em;
     color: #aaa;
+    text-align: center;
 }
