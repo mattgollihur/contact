@@ -124,6 +124,23 @@ function setupScrollReveal() {
     handleScroll(); 
 }
 
+// --- 6. Service Worker Registration ---
+function registerServiceWorker() {
+    // Check if the browser supports Service Workers
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // Register the service-worker.js file
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+}
+
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -131,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateGreeting();
     setupCardFlipper(); 
     setupAnimatedDownload();
-    setupScrollReveal(); // <--- NEW CALL
+    setupScrollReveal();
+    registerServiceWorker(); 
     
     const toggleButton = document.getElementById('theme-toggle');
     if (toggleButton) {
