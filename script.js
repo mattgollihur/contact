@@ -1,31 +1,41 @@
-// script.js (UPDATED CODE - Adjusted for direct VCF opening)
+// script.js (UPDATED CODE - Instructional Modal and Delay)
 
-// --- 1. Animated Download Button Function ---
-function setupAnimatedDownload() {
+// --- 1. Instructions Modal and VCF Trigger ---
+function setupVCFInstructions() {
     const vcardButton = document.getElementById('vcard-button');
-    if (!vcardButton) return;
+    const modal = document.getElementById('save-instructions-modal');
+    
+    if (!vcardButton || !modal) return;
 
     vcardButton.addEventListener('click', function(e) {
-        // e.preventDefault() is NO LONGER needed here, as we rely on the default action
-        // of opening the data URI after the animation finishes.
+        // Stop the default action of immediately opening the link
+        e.preventDefault(); 
         
-        const button = this;
+        const vcardUrl = this.href;
+        
+        // 1. Disable the button to prevent multiple clicks
+        this.style.pointerEvents = 'none';
 
-        // 1. Start the animation (adds the 'downloading' class)
-        button.classList.add('downloading');
+        // 2. Show the modal
+        modal.classList.add('visible');
 
-        // 2. Wait for the animation to finish (800ms to match CSS)
+        // 3. Set a timeout for the 5-second delay
         setTimeout(() => {
-            // The browser is allowed to continue with its default action, which is opening 
-            // the data:text/vcard URI, prompting the user to save the contact.
+            // 4. Hide the modal after the delay
+            modal.classList.remove('visible');
             
-            // 3. Reset the button after a short delay (200ms)
-            setTimeout(() => {
-                button.classList.remove('downloading');
-                // The element is now ready for the next click (which triggers the default action)
-            }, 200);
-
-        }, 800); 
+            // 5. Trigger the VCF opening 
+            // We create a temporary link and click it to ensure the VCF data URI is processed
+            const link = document.createElement('a');
+            link.href = vcardUrl;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // 6. Re-enable the button
+            vcardButton.style.pointerEvents = '';
+            
+        }, 5000); // 5000 milliseconds = 5 seconds
     });
 }
 
@@ -36,10 +46,9 @@ function setupScrollReveal() {
 
     function handleScroll() {
         const viewportHeight = window.innerHeight;
-        // Get the distance from the top of the viewport to the element
         const elementTop = revealElement.getBoundingClientRect().top;
         
-        // Show the element when it is within 150px of the bottom of the viewport
+        // Show the footer when it's within 150px of the bottom of the viewport
         if (elementTop < viewportHeight - 150) {
             revealElement.classList.add('revealed');
             // Remove the listener once revealed to save performance
@@ -55,6 +64,6 @@ function setupScrollReveal() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    setupAnimatedDownload();
+    setupVCFInstructions(); 
     setupScrollReveal();
 });
