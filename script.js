@@ -19,13 +19,12 @@ function setupVCFInstructions() {
         // 2. Show the modal
         modal.classList.add('visible');
 
-        // 3. Set a timeout for the 5-second delay
+        // 3. Set a timeout for the 3-second delay (3000 milliseconds)
         setTimeout(() => {
             // 4. Hide the modal after the delay
             modal.classList.remove('visible');
             
             // 5. Trigger the VCF opening 
-            // We create a temporary link and click it to ensure the VCF data URI is processed
             const link = document.createElement('a');
             link.href = vcardUrl;
             document.body.appendChild(link);
@@ -35,7 +34,7 @@ function setupVCFInstructions() {
             // 6. Re-enable the button
             vcardButton.style.pointerEvents = '';
             
-        }, 5000); // 5000 milliseconds = 5 seconds
+        }, **3000**); // <-- CHANGED from 5000 to 3000 milliseconds
     });
 }
 
