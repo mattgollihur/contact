@@ -1,517 +1,163 @@
-body {
+document.addEventListener('DOMContentLoaded', () => {
 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
 
-    background-color: #ffffff;
+    // --- Elements for Modal/vCard Download ---
 
-    margin: 0;
+    const vcardButton = document.getElementById('vcard-button');
 
-    padding: 0;
-
-    min-height: 100vh;
-
-}
+    const modal = document.getElementById('save-instructions-modal');
 
 
 
-@keyframes gradientShift {
+    // --- Elements for General Link Tracking ---
 
-    0% {
+    const trackedElements = [
 
-        background-position: 0% 50%;
+        { id: 'phone-link', category: 'direct_contact', label: 'call_phone' },
+
+        { id: 'email-link', category: 'direct_contact', label: 'send_email' },
+
+        { id: 'linkedin-button', category: 'navigation', label: 'linkedin_profile' },
+
+        { id: 'photos-button', category: 'navigation', label: 'event_photos' },
+
+        { id: 'meeting-button', category: 'contact_action', label: 'meeting_request' }
+
+    ];
+
+
+
+    // Function to handle standard link tracking
+
+    function trackLinkClick(e) {
+
+        const elementId = e.currentTarget.id;
+
+        const trackingInfo = trackedElements.find(el => el.id === elementId);
+
+
+
+        if (trackingInfo && typeof gtag === 'function') {
+
+            gtag('event', 'link_click', {
+
+                'event_category': trackingInfo.category,
+
+                'event_label': trackingInfo.label
+
+            });
+
+        }
 
     }
 
-    50% {
 
-        background-position: 100% 50%;
+
+    // Attach tracking to standard links
+
+    trackedElements.forEach(item => {
+
+        const element = document.getElementById(item.id);
+
+        if (element) {
+
+            element.addEventListener('click', trackLinkClick);
+
+        }
+
+    });
+
+
+
+    // --- Special Handler for vCard Button (with Modal/Timeout) ---
+
+    if (vcardButton && modal) {
+
+        vcardButton.addEventListener('click', (e) => {
+
+            e.preventDefault();
+
+
+
+            // GA Event Tracking for vCard Button
+
+            if (typeof gtag === 'function') {
+
+                gtag('event', 'vcard_download', {
+
+                    'event_category': 'contact_action',
+
+                    'event_label': 'save_to_phone'
+
+                });
+
+            }
+
+
+
+            modal.classList.add('visible');
+
+
+
+            setTimeout(() => {
+
+                modal.classList.remove('visible');
+
+                // Trigger the actual download/navigation after the modal delay
+
+                window.location.href = vcardButton.href;
+
+            }, 3500);
+
+        });
 
     }
 
-    100% {
 
-        background-position: 0% 50%;
+
+    // --- Reverse Scroll Reveal ---
+
+    const footerReveal = document.getElementById('footer-reveal');
+
+
+
+    if (footerReveal) {
+
+        setTimeout(() => {
+
+            const documentHeight = document.documentElement.scrollHeight;
+
+            const triggerPoint = documentHeight * 0.85; 
+
+        
+
+            function handleScroll() {
+
+                const scrolledDistance = window.scrollY + window.innerHeight;
+
+
+
+                if (scrolledDistance >= triggerPoint) {
+
+                    footerReveal.classList.add('visible');
+
+                } else {
+
+                    footerReveal.classList.remove('visible');
+
+                }
+
+            }
+
+
+
+            window.addEventListener('scroll', handleScroll);
+
+            handleScroll();
+
+        }, 100);
 
     }
 
-}
-
-
-
-.background-accent {
-
-    background: linear-gradient(
-
-        135deg, 
-
-        #eaf4fc 0%, 
-
-        #f6f9fc 25%, 
-
-        #eaf4fc 50%, 
-
-        #f6f9fc 75%, 
-
-        #eaf4fc 100%
-
-    );
-
-    background-size: 400% 400%;
-
-    animation: gradientShift 20s ease infinite;
-
-
-
-    min-height: 100vh;
-
-    width: 100vw;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 0;
-
-}
-
-
-
-.card {
-
-    background: #ffffff;
-
-    border-radius: 20px;
-
-    box-shadow: 0 8px 28px rgba(32,102,172,0.14);
-
-    padding: 40px 25px;
-
-    width: 100%;
-
-    max-width: 420px;
-
-    box-sizing: border-box;
-
-    text-align: center;
-
-    margin: 40px 0;
-
-}
-
-
-
-img.logo {
-
-    width: 90px;
-
-    margin-bottom: 20px;
-
-    border-radius: 50%;
-
-    box-shadow: 0 2px 12px rgba(32,102,172,0.18);
-
-    border: 2px solid #2066AC;
-
-}
-
-
-
-.hr-section {
-
-    border: none;
-
-    border-top: 1px solid #e2e9f3;
-
-    margin: 24px 0;
-
-}
-
-
-
-.footer-divider {
-
-    border: none;
-
-    border-top: 1px solid #dde3ea;
-
-    margin: 30px 0 14px 0;
-
-}
-
-
-
-h1, h2, .contact-details-block {
-
-    margin-top: 0;
-
-    margin-bottom: 14px;
-
-}
-
-
-
-h1 {
-
-    font-size: 2em;
-
-    color: #2066AC;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-}
-
-
-
-h2 {
-
-    font-size: 1.12em;
-
-    color: #555;
-
-    font-weight: 500;
-
-}
-
-
-
-h2.bold {
-
-    font-weight: 700;
-
-}
-
-
-
-.contact-details-block {
-
-    text-align: center;
-
-    margin: 0 0 14px 0;
-
-    padding: 0;
-
-}
-
-
-
-.contact-item {
-
-    font-size: 1em;
-
-    color: #000000;
-
-    text-align: center;
-
-    margin: 0 0 8px 0;
-
-    line-height: 1.4;
-
-}
-
-
-
-.contact-item:last-child {
-
-    margin-bottom: 0;
-
-}
-
-
-
-.contact-item a {
-
-    color: #0033A0;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-}
-
-
-
-.contact-item a:hover {
-
-    text-decoration: underline;
-
-}
-
-
-
-.button {
-
-    display: inline-block;
-
-    background-color: #2066AC;
-
-    color: white;
-
-    text-decoration: none;
-
-    padding: 16px 0;
-
-    margin: 10px 0;
-
-    border-radius: 8px;
-
-    font-size: 1.04em;
-
-    width: 90%;
-
-    max-width: 340px;
-
-    transition: background-color 0.2s, box-shadow 0.2s, transform 0.18s;
-
-    box-shadow: 0 2px 10px rgba(32,102,172,0.13);
-
-    position: relative; 
-
-    z-index: 10;
-
-}
-
-
-
-.button:hover {
-
-    background-color: #1A5289;
-
-    box-shadow: 0 4px 20px rgba(32,102,172,0.17);
-
-    transform: scale(1.04);
-
-}
-
-
-
-.modal-overlay {
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.7);
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    z-index: 1000;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition: opacity 0.3s, visibility 0.3s;
-
-}
-
-
-
-.modal-overlay.visible {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    display: flex;
-
-}
-
-
-
-.modal-content {
-
-    background: #ffffff;
-
-    padding: 30px;
-
-    border-radius: 12px;
-
-    width: 90%;
-
-    max-width: 350px;
-
-    text-align: center;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-    transform: translateY(-50px);
-
-    transition: transform 0.3s;
-
-}
-
-
-
-.modal-overlay.visible .modal-content {
-
-    transform: translateY(0);
-
-}
-
-
-
-.modal-header {
-
-    font-size: 1.3em;
-
-    font-weight: 700;
-
-    color: #2066AC;
-
-    margin-top: 0;
-
-    margin-bottom: 10px;
-
-}
-
-
-
-.modal-tip {
-
-    font-size: 0.9em;
-
-    font-weight: 500;
-
-    color: #444;
-
-    margin-top: 15px;
-
-    line-height: 1.4;
-
-    border: 1px solid #eaf4fc;
-
-    padding: 10px;
-
-    border-radius: 6px;
-
-    background-color: #f8fbfd;
-
-}
-
-
-
-.modal-divider {
-
-    border: none;
-
-    border-top: 1px solid #e2e9f3;
-
-    margin: 10px auto 15px auto;
-
-    width: 80%;
-
-}
-
-
-
-.loader {
-
-    border: 3px solid #f3f3f3;
-
-    border-top: 3px solid #2066AC;
-
-    border-radius: 50%;
-
-    width: 20px;
-
-    height: 20px;
-
-    animation: spin 1s linear infinite;
-
-    margin: 20px auto 0;
-
-}
-
-
-
-@keyframes spin {
-
-    0% { transform: rotate(0deg); }
-
-    100% { transform: rotate(360deg); }
-
-}
-
-
-
-.footer-reveal {
-
-    opacity: 0;
-
-    transform: translateY(15px);
-
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-
-}
-
-
-
-.footer-reveal.visible {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-}
-
-
-
-@media (max-width: 500px) {
-
-    .card {
-
-        padding: 22px 8px;
-
-        margin: 18px 0;
-
-    }
-
-    .background-accent {
-
-        padding: 0;
-
-    }
-
-    img.logo {
-
-        width: 70px;
-
-        margin-bottom: 14px;
-
-    }
-
-    h1 {
-
-        font-size: 1.36em;
-
-    }
-
-    h2 {
-
-        font-size: 0.98em;
-
-    }
-
-    .button {
-
-        font-size: 0.95em;
-
-        padding: 12px 0;
-
-    }
-
-}
+});
