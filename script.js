@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.classList.remove('visible');
                 // Trigger the actual download/navigation after the modal delay
                 window.location.href = vcardButton.href;
-            }, 5000);
+            }, 3500);
         });
     }
 
