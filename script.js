@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 modal.classList.remove('visible');
                 window.location.href = vcardButton.href;
-            }, 5000);
+            }, 3500);
         });
     }
 
