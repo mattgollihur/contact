@@ -6,8 +6,34 @@ body {
     min-height: 100vh;
 }
 
+/* START NEW ANIMATION */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .background-accent {
-    background: linear-gradient(135deg, #eaf4fc 0%, #f6f9fc 100%);
+    /* Base Gradient (using Zurich brand colors) */
+    background: linear-gradient(
+        135deg, 
+        #eaf4fc 0%, 
+        #f6f9fc 25%, 
+        #eaf4fc 50%, 
+        #f6f9fc 75%, 
+        #eaf4fc 100%
+    );
+    /* Make the gradient large so the movement is subtle */
+    background-size: 400% 400%;
+    /* Apply the slow animation */
+    animation: gradientShift 20s ease infinite;
+
     min-height: 100vh;
     width: 100vw;
     display: flex;
@@ -15,6 +41,8 @@ body {
     justify-content: center;
     padding: 0;
 }
+/* END NEW ANIMATION */
+
 
 .card {
     background: #ffffff;
@@ -140,7 +168,7 @@ footer {
 
 /* Card Flipper Styles */
 .card-flipper {
-    perspective: 1000px; /* Gives the 3D effect */
+    perspective: 1000px;
 }
 
 .card-flipper-inner {
@@ -168,7 +196,7 @@ footer {
     justify-content: center;
     padding: 0 10px;
     box-sizing: border-box;
-    cursor: pointer; /* Indicates the card is clickable */
+    cursor: pointer;
 }
 
 .card-front {
@@ -178,13 +206,10 @@ footer {
 .card-back {
     background-color: #ffffff;
     transform: rotateY(180deg);
+    padding-top: 25px; /* Added spacing since back-title was removed */
 }
 
-.back-title {
-    font-size: 1.5em;
-    color: #0033A0;
-    margin-bottom: 20px;
-}
+/* REMOVED: .back-title style is no longer needed */
 
 .flip-cta {
     font-size: 0.85em;
@@ -208,22 +233,18 @@ footer {
 
 
 /* Download Button Animation */
-
-/* Initial state (default button) */
 #vcard-button {
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
-/* State during download animation */
 #vcard-button.downloading {
-    background-color: #1a5289; /* Darker blue during animation */
+    background-color: #1a5289; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    transform: scale(0.95); /* Shrink slightly */
+    transform: scale(0.95);
 }
 
-/* Animated checkmark/progress bar */
 #vcard-button.downloading::after {
     content: "✅ SAVED";
     position: absolute;
@@ -231,22 +252,20 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #008000; /* Green overlay */
+    background-color: #008000;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Starts invisible */
+    opacity: 0;
     transition: opacity 0.5s, transform 0.5s;
-    transform: translateY(100%); /* Starts off-screen (bottom) */
+    transform: translateY(100%); 
     z-index: 2;
 }
 
-/* Animates the confirmation state */
 #vcard-button.downloading {
-    pointer-events: none; /* Disable re-click during animation */
+    pointer-events: none;
 }
 
-/* Show the confirmation layer */
 #vcard-button.downloading::after {
     opacity: 1;
     transform: translateY(0);
@@ -255,14 +274,12 @@ footer {
 
 /* Reverse Scroll Reveal Footer */
 .footer-reveal {
-    /* Starts invisible and slightly out of place */
     opacity: 0;
     transform: translateY(15px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .footer-reveal.revealed {
-    /* Final visible state */
     opacity: 1;
     transform: translateY(0);
 }
