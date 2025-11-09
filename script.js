@@ -1,30 +1,6 @@
-// script.js (UPDATED CODE)
+// script.js (UPDATED CODE - No Card Flipper, No Service Worker)
 
-// --- 3. Digital Card Flipper Toggle ---
-function setupCardFlipper() {
-    const flipper = document.querySelector('.card-flipper');
-    if (flipper) {
-        // Create inner div for 3D rotation if it doesn't exist
-        if (!document.querySelector('.card-flipper-inner')) {
-            const innerDiv = document.createElement('div');
-            innerDiv.classList.add('card-flipper-inner');
-            
-            // Move the current contents into the inner wrapper
-            while (flipper.firstChild) {
-                innerDiv.appendChild(flipper.firstChild);
-            }
-            // Put the wrapper back into the flipper
-            flipper.appendChild(innerDiv);
-        }
-
-        // Add the click listener to the flipper container
-        flipper.addEventListener('click', () => {
-            flipper.classList.toggle('flipped');
-        });
-    }
-}
-
-// --- 4. Animated Download Button Function ---
+// --- 1. Animated Download Button Function ---
 function setupAnimatedDownload() {
     const vcardButton = document.getElementById('vcard-button');
     if (!vcardButton) return;
@@ -59,7 +35,7 @@ function setupAnimatedDownload() {
     });
 }
 
-// --- 5. Reverse Scroll Reveal Logic ---
+// --- 2. Reverse Scroll Reveal Logic ---
 function setupScrollReveal() {
     const revealElement = document.getElementById('footer-reveal');
     if (!revealElement) return;
@@ -85,8 +61,6 @@ function setupScrollReveal() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    setupCardFlipper(); 
     setupAnimatedDownload();
     setupScrollReveal();
-    // The call to registerServiceWorker() has been removed.
 });
