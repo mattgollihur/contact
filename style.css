@@ -212,7 +212,7 @@ h2.bold {
     /* Styles all elements with the class 'button'. */
     display: inline-block;
     /* Allows padding/margins while maintaining flow, like a block element. */
-    background-color: #2066AC; /* REVERTED: Zurich Blue */
+    background-color: rgba(32, 102, 172, 0.9); /* UPDATED: Zurich Blue with 90% opacity */
     /* Solid background color (Zurich Blue). */
     color: white;
     /* White text color. */
@@ -242,7 +242,7 @@ h2.bold {
 
 .button:hover {
     /* Styles the button when the mouse hovers over it. */
-    background-color: #1A5289; /* REVERTED: Darker Zurich Blue for hover */
+    background-color: rgba(26, 82, 137, 0.95); /* UPDATED: Darker Zurich Blue with 95% opacity */
     /* Slightly darker blue on hover. */
     box-shadow: 0 4px 20px rgba(32,102,172,0.17);
     /* Larger shadow on hover. */
@@ -362,7 +362,7 @@ h2.bold {
     /* Styles the spinning circle animation displayed during the modal delay. */
     border: 3px solid #f3f3f3;
     /* Light color for the base circle. */
-    border-top: 3px solid #2066AC; /* REVERTED: Zurich Blue */
+    border-top: 3px solid #2066AC; /* Zurich Blue */
     /* Blue color for the top arc, creating the spinner effect. */
     border-radius: 50%;
     /* Creates a circle. */
