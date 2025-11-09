@@ -1,3 +1,4 @@
+/* style.css (UPDATED CODE) */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #ffffff;
@@ -56,6 +57,13 @@ body {
     margin: 40px 0;
 }
 
+/* Image: Top Zurich logo wrapper (NEW ADDITION) */
+.card-top-logo {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px; /* Adds space between the Zurich logo and the flipper card */
+}
+
 /* Image: logo profile */
 img.logo {
     width: 90px;
@@ -63,6 +71,9 @@ img.logo {
     border-radius: 50%;
     box-shadow: 0 2px 12px rgba(32,102,172,0.18);
     border: 2px solid #2066AC;
+    /* Forces the profile photo to display at the top of the flex column */
+    order: -1; 
+    z-index: 10;
 }
 
 /* Divider lines */
@@ -197,6 +208,8 @@ footer {
     padding: 0 10px;
     box-sizing: border-box;
     cursor: pointer;
+    /* Fixes stacking issues by defining a containing block */
+    position: relative; 
 }
 
 .card-front {
@@ -206,10 +219,8 @@ footer {
 .card-back {
     background-color: #ffffff;
     transform: rotateY(180deg);
-    padding-top: 25px; /* Added spacing since back-title was removed */
+    padding-top: 25px;
 }
-
-/* REMOVED: .back-title style is no longer needed */
 
 .flip-cta {
     font-size: 0.85em;
