@@ -1,64 +1,55 @@
-// script.js (UPDATED CODE - Instructional Modal and Delay)
-
-// --- 1. Instructions Modal and VCF Trigger ---
-function setupVCFInstructions() {
+document.addEventListener('DOMContentLoaded', () => {
     const vcardButton = document.getElementById('vcard-button');
     const modal = document.getElementById('save-instructions-modal');
-    
-    if (!vcardButton || !modal) return;
 
-    vcardButton.addEventListener('click', function(e) {
-        // Stop the default action of immediately opening the link
-        e.preventDefault(); 
-        
-        const vcardUrl = this.href;
-        
-        // 1. Disable the button to prevent multiple clicks
-        this.style.pointerEvents = 'none';
+    // Add event listener to the vCard button
+    if (vcardButton && modal) {
+        vcardButton.addEventListener('click', (e) => {
+            // Prevent the default link action (the download) initially
+            e.preventDefault();
 
-        // 2. Show the modal
-        modal.classList.add('visible');
+            // 1. Show the modal
+            modal.classList.add('visible');
 
-        // 3. Set a timeout for the 3-second delay (3000 milliseconds)
-        setTimeout(() => {
-            // 4. Hide the modal after the delay
-            modal.classList.remove('visible');
-            
-            // 5. Trigger the VCF opening 
-            const link = document.createElement('a');
-            link.href = vcardUrl;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // 6. Re-enable the button
-            vcardButton.style.pointerEvents = '';
-            
-        }, **3000**); // <-- CHANGED from 5000 to 3000 milliseconds
-    });
-}
+            // 2. Hide the modal and trigger the download after a delay (e.g., 5 seconds)
+            setTimeout(() => {
+                modal.classList.remove('visible');
+                
+                // The original action (vCard download) is triggered here
+                window.location.href = vcardButton.href;
+                
+                // *** No localStorage code is present, so the modal will show again next time ***
+                
+            }, 5000); // 5000 milliseconds = 5 seconds
 
-// --- 2. Reverse Scroll Reveal Logic ---
-function setupScrollReveal() {
-    const revealElement = document.getElementById('footer-reveal');
-    if (!revealElement) return;
-
-    function handleScroll() {
-        const viewportHeight = window.innerHeight;
-        const elementTop = revealElement.getBoundingClientRect().top;
-        
-        if (elementTop < viewportHeight - 150) {
-            revealElement.classList.add('revealed');
-            window.removeEventListener('scroll', handleScroll);
-        }
+        });
     }
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
-}
+    // --- Reverse Scroll Reveal (Original Feature) ---
+    const footerReveal = document.getElementById('footer-reveal');
+    // Ensure the footer is available before calculating scroll points
+    if (footerReveal) {
+        // Use a slight delay to ensure the page height is fully rendered
+        setTimeout(() => {
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Determine the scroll trigger point (e.g., 85% of the total document height)
+            const triggerPoint = documentHeight * 0.85; 
+        
+            function handleScroll() {
+                // Calculate how far the user has scrolled from the top + the viewport height
+                const scrolledDistance = window.scrollY + window.innerHeight;
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    setupVCFInstructions(); 
-    setupScrollReveal();
+                if (scrolledDistance >= triggerPoint) {
+                    footerReveal.classList.add('visible');
+                } else {
+                    footerReveal.classList.remove('visible');
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            // Also run on load just in case the page is short
+            handleScroll();
+        }, 100);
+    }
 });
