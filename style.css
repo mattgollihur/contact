@@ -41,13 +41,13 @@ body {
     /* Styles the container that holds the contact card and provides the animated background. */
     background: linear-gradient(
         135deg,
-        #eaf4fc 0%,
-        #f6f9fc 25%,
-        #eaf4fc 50%,
-        #f6f9fc 75%,
-        #eaf4fc 100%
+        #E4ECF4 0%, /* NEW: Base Light Blue/Gray Background */
+        #F0F4F7 25%, /* Lighter shade */
+        #E4ECF4 50%,
+        #F0F4F7 75%,
+        #E4ECF4 100%
     );
-    /* Defines a linear gradient with multiple light blue/white stops. */
+    /* Defines a linear gradient with multiple light blue/gray stops for subtle movement. */
     background-size: 400% 400%;
     /* Stretches the background gradient to 400% size, making the shift gradual and subtle. */
     animation: gradientShift 20s ease infinite;
@@ -69,7 +69,7 @@ body {
 /* === Main Contact Card Styling === */
 .card {
     /* Styles the main container for the contact information. */
-    background: #ffffff;
+    background: #F8F6F4; /* NEW: Off-White/Cream for a subtle cardstock look */
     /* White background. */
     border-radius: 20px;
     /* Rounded corners. */
@@ -212,7 +212,7 @@ h2.bold {
     /* Styles all elements with the class 'button'. */
     display: inline-block;
     /* Allows padding/margins while maintaining flow, like a block element. */
-    background-color: #2066AC;
+    background-color: #008080; /* NEW: Corporate Teal Button Color */
     /* Solid background color (Zurich Blue). */
     color: white;
     /* White text color. */
@@ -242,7 +242,7 @@ h2.bold {
 
 .button:hover {
     /* Styles the button when the mouse hovers over it. */
-    background-color: #1A5289;
+    background-color: #006666; /* NEW: Darker Teal for hover */
     /* Slightly darker blue on hover. */
     box-shadow: 0 4px 20px rgba(32,102,172,0.17);
     /* Larger shadow on hover. */
@@ -303,7 +303,7 @@ h2.bold {
 
 .modal-content {
     /* Styles the white box inside the overlay. */
-    background: #ffffff;
+    background: #F8F6F4; /* NEW: Matches card background */
     padding: 30px;
     border-radius: 12px;
     width: 90%;
@@ -328,6 +328,7 @@ h2.bold {
     font-size: 1.3em;
     font-weight: 700;
     color: #2066AC;
+    /* Zurich Blue color retained for brand accent */
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -361,7 +362,7 @@ h2.bold {
     /* Styles the spinning circle animation displayed during the modal delay. */
     border: 3px solid #f3f3f3;
     /* Light color for the base circle. */
-    border-top: 3px solid #2066AC;
+    border-top: 3px solid #008080; /* NEW: Corporate Teal */
     /* Blue color for the top arc, creating the spinner effect. */
     border-radius: 50%;
     /* Creates a circle. */
@@ -385,9 +386,9 @@ h2.bold {
     /* Styles the footer container, intended to fade in. */
     opacity: 0;
     /* Starts hidden/transparent. */
-    transform: translateY(25px); /* Increased slide distance for pronounced effect */
+    transform: translateY(25px); /* INCREASED: For pronounced effect */
     /* Starts slightly below its final position. */
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Faster transition for pronounced effect */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* FASTER: For pronounced effect */
     /* Smooth transition for the fade-in/slide-up effect. */
 }
 
