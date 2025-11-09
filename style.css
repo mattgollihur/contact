@@ -250,6 +250,21 @@ h2.bold {
     /* Gently scales the button up to give an interactive "pop" effect. */
 }
 
+/* === Icon Image Styling (NEW) 🖼️ === */
+.icon-image {
+    /* Targets the image elements used as icons within the buttons */
+    width: 25px; 
+    /* Set a consistent size for the icons */
+    height: 25px;
+    
+    /* Add space between the icon and the text */
+    margin-right: 10px;
+    
+    /* Ensure the image is aligned correctly with the button text */
+    vertical-align: middle; 
+}
+
+
 /* === Modal (Pop-up Instructions) Styles === */
 .modal-overlay {
     /* Styles the entire screen overlay. */
