@@ -1,4 +1,4 @@
-// script.js (UPDATED CODE - No Card Flipper, No Service Worker)
+// script.js (UPDATED CODE - Adjusted for direct VCF opening)
 
 // --- 1. Animated Download Button Function ---
 function setupAnimatedDownload() {
@@ -6,29 +6,23 @@ function setupAnimatedDownload() {
     if (!vcardButton) return;
 
     vcardButton.addEventListener('click', function(e) {
-        // Prevent default download action immediately
-        e.preventDefault(); 
+        // e.preventDefault() is NO LONGER needed here, as we rely on the default action
+        // of opening the data URI after the animation finishes.
         
         const button = this;
-        const vcardUrl = this.href;
 
         // 1. Start the animation (adds the 'downloading' class)
         button.classList.add('downloading');
 
         // 2. Wait for the animation to finish (800ms to match CSS)
         setTimeout(() => {
-            // 3. Initiate the actual VCF download
-            const link = document.createElement('a');
-            link.href = vcardUrl;
-            link.download = 'Matt_Gollihur.vcf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // 4. Reset the button after a short delay (200ms)
+            // The browser is allowed to continue with its default action, which is opening 
+            // the data:text/vcard URI, prompting the user to save the contact.
+            
+            // 3. Reset the button after a short delay (200ms)
             setTimeout(() => {
                 button.classList.remove('downloading');
-                button.style.pointerEvents = '';
+                // The element is now ready for the next click (which triggers the default action)
             }, 200);
 
         }, 800); 
