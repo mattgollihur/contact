@@ -212,7 +212,7 @@ h2.bold {
     /* Styles all elements with the class 'button'. */
     display: inline-block;
     /* Allows padding/margins while maintaining flow, like a block element. */
-    background-color: rgba(32, 102, 172, 0.9); /* UPDATED: Zurich Blue with 90% opacity */
+    background-color: rgba(32, 102, 172, 0.8); /* UPDATED: Zurich Blue with 80% opacity (20% transparent) */
     /* Solid background color (Zurich Blue). */
     color: white;
     /* White text color. */
@@ -242,7 +242,7 @@ h2.bold {
 
 .button:hover {
     /* Styles the button when the mouse hovers over it. */
-    background-color: rgba(26, 82, 137, 0.95); /* UPDATED: Darker Zurich Blue with 95% opacity */
+    background-color: rgba(26, 82, 137, 0.85); /* UPDATED: Darker Zurich Blue with 85% opacity */
     /* Slightly darker blue on hover. */
     box-shadow: 0 4px 20px rgba(32,102,172,0.17);
     /* Larger shadow on hover. */
