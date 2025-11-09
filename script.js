@@ -48,17 +48,13 @@ function setupScrollReveal() {
         const viewportHeight = window.innerHeight;
         const elementTop = revealElement.getBoundingClientRect().top;
         
-        // Show the footer when it's within 150px of the bottom of the viewport
         if (elementTop < viewportHeight - 150) {
             revealElement.classList.add('revealed');
-            // Remove the listener once revealed to save performance
             window.removeEventListener('scroll', handleScroll);
         }
     }
 
-    // Attach the scroll listener
     window.addEventListener('scroll', handleScroll);
-    // Also run it once in case the content is shorter than the viewport height
     handleScroll(); 
 }
 
