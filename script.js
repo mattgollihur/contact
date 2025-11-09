@@ -6,12 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
         vcardButton.addEventListener('click', (e) => {
             e.preventDefault();
 
+            // 💡 GOOGLE ANALYTICS EVENT TRACKING 💡
+            // Sends a 'vcard_download' event to GA4 when the button is clicked
+            if (typeof gtag === 'function') {
+                gtag('event', 'vcard_download', {
+                    'event_category': 'contact_action',
+                    'event_label': 'save_to_phone'
+                });
+            }
+
             modal.classList.add('visible');
 
             setTimeout(() => {
                 modal.classList.remove('visible');
                 window.location.href = vcardButton.href;
-            }, 3500);
+            }, 5000);
         });
     }
 
