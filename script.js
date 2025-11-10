@@ -17,7 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('save-instructions-modal');
     // Gets the HTML element (the full pop-up overlay) by its ID.
 
-    // --- Elements for General Link Tracking (UPDATED photos-button ID) ---
+    // --- Page Load Enhancements ---
+    // Add the 'primary-action' class to the vCard button on load to make it stand out (as requested).
+    if (vcardButton) {
+        vcardButton.classList.add('primary-action');
+    }
+
+    // --- Elements for General Link Tracking ---
     const trackedElements = [
         /* An array of objects defining which elements to track and how to categorize them in Google Analytics (gtag). */
         { id: 'phone-link', category: 'direct_contact', label: 'call_phone' },
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'linkedin-button', category: 'navigation', label: 'linkedin_profile' },
         // Tracking details for the LinkedIn button.
         { id: 'photos-button', category: 'navigation', label: 'event_photos' },
-        // Tracking details for the Event Photos button. **(ID was changed in index.html)**
+        // Tracking details for the Event Photos button.
         { id: 'meeting-button', category: 'contact_action', label: 'meeting_request' }
         // Tracking details for the Meeting Request button.
     ];
@@ -92,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Trigger the actual download/navigation after the modal delay
                 window.location.href = vcardButton.href;
-                // Finally, redirects the browser to the vCard link, starting the download process.
             }, 3500);
         });
     }
