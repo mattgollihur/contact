@@ -1,453 +1,453 @@
 /*
- * style.css
- * This file controls the visual presentation (layout, colors, fonts) of your HTML elements.
- * It uses selectors (e.g., body, .card) to target elements and apply declarations (property: value;).
- */
+ * style.css
+ * This file controls the visual presentation (layout, colors, fonts) of your HTML elements.
+ * It uses selectors (e.g., body, .card) to target elements and apply declarations (property: value;).
+ */
 
 /* === Base Body Styling === */
 body {
-    /* Selects the entire visible page content area. */
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* Sets a clean, standard sans-serif font stack. */
-    background-color: #ffffff;
-    /* Sets the default background color to white. */
-    margin: 0;
-    /* Removes the default external spacing around the body. */
-    padding: 0;
-    /* Removes the default internal spacing within the body. */
-    min-height: 100vh;
-    /* Ensures the body takes up at least 100% of the viewport height (vh). */
+    /* Selects the entire visible page content area. */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* Sets a clean, standard sans-serif font stack. */
+    background-color: #ffffff;
+    /* Sets the default background color to white. */
+    margin: 0;
+    /* Removes the default external spacing around the body. */
+    padding: 0;
+    /* Removes the default internal spacing within the body. */
+    min-height: 100vh;
+    /* Ensures the body takes up at least 100% of the viewport height (vh). */
 }
 
 /* === Keyframe Animation for Background Gradient === */
 @keyframes gradientShift {
-    /* Defines a custom animation named 'gradientShift'. */
-    0% {
-        background-position: 0% 50%;
-        /* Starting position for the background gradient. */
-    }
-    50% {
-        background-position: 100% 50%;
-        /* Midpoint position: shifts the gradient to the right. */
-    }
-    100% {
-        background-position: 0% 50%;
-        /* End position: returns the gradient to the start, creating a loop. */
-    }
+    /* Defines a custom animation named 'gradientShift'. */
+    0% {
+        background-position: 0% 50%;
+        /* Starting position for the background gradient. */
+    }
+    50% {
+        background-position: 100% 50%;
+        /* Midpoint position: shifts the gradient to the right. */
+    }
+    100% {
+        background-position: 0% 50%;
+        /* End position: returns the gradient to the start, creating a loop. */
+    }
 }
 
 /* === Background Container (Accent) Styling === */
 .background-accent {
-    /* Styles the container that holds the contact card and provides the animated background. */
-    background: linear-gradient(
-        135deg,
-        **#D3E0EC** 0%, /* Darker Blue-Gray Background */
-        **#E0E6EB** 25%, /* Lighter shade */
-        **#D3E0EC** 50%,
-        **#E0E6EB** 75%,
-        **#D3E0EC** 100%
-    );
-    /* Defines a linear gradient with multiple light blue/gray stops for subtle movement. */
-    background-size: 400% 400%;
-    /* Stretches the background gradient to 400% size, making the shift gradual and subtle. */
-    animation: gradientShift 20s ease infinite;
-    /* Applies the defined keyframe animation over 20 seconds, infinitely looping. */
+    /* Styles the container that holds the contact card and provides the animated background. */
+    background: linear-gradient(
+        135deg,
+        #D3E0EC 0%, /* Darker Blue-Gray Background */
+        #E0E6EB 25%, /* Lighter shade */
+        #D3E0EC 50%,
+        #E0E6EB 75%,
+        #D3E0EC 100%
+    );
+    /* Defines a linear gradient with multiple light blue/gray stops for subtle movement. */
+    background-size: 400% 400%;
+    /* Stretches the background gradient to 400% size, making the shift gradual and subtle. */
+    animation: gradientShift 20s ease infinite;
+    /* Applies the defined keyframe animation over 20 seconds, infinitely looping. */
 
-    min-height: 100vh;
-    /* Ensures it covers the full viewport height. */
-    width: 100vw;
-    /* Ensures it covers the full viewport width. */
-    display: flex;
-    /* Uses Flexbox for alignment. */
-    align-items: center;
-    /* Centers children (the card) vertically. */
-    justify-content: center;
-    /* Centers children (the card) horizontally. */
-    padding: 0;
+    min-height: 100vh;
+    /* Ensures it covers the full viewport height. */
+    width: 100vw;
+    /* Ensures it covers the full viewport width. */
+    display: flex;
+    /* Uses Flexbox for alignment. */
+    align-items: center;
+    /* Centers children (the card) vertically. */
+    justify-content: center;
+    /* Centers children (the card) horizontally. */
+    padding: 0;
 }
 
 /* === Main Contact Card Styling === */
 .card {
-    /* Styles the main container for the contact information. */
-    background: #F8F6F4; /* Off-White/Cream cardstock look */
-    /* White background. */
-    border-radius: 20px;
-    /* Rounded corners. */
-    box-shadow: 0 8px 28px rgba(32,102,172,0.14);
-    /* Large, subtle blue shadow for a lifted effect. */
-    padding: 40px 25px;
-    /* Internal spacing (top/bottom: 40px, left/right: 25px). */
-    width: 100%;
-    /* Takes up full width of its parent (up to max-width). */
-    max-width: 420px;
-    /* Limits the card's width on large screens. */
-    box-sizing: border-box;
-    /* Includes padding and border in the element's total width and height. */
-    text-align: center;
-    /* Centers text and inline elements inside the card. */
-    margin: 40px 0;
-    /* Adds vertical margin to ensure some space on small screens, even with min-height. */
+    /* Styles the main container for the contact information. */
+    background: #F8F6F4; /* Off-White/Cream cardstock look */
+    /* White background. */
+    border-radius: 20px;
+    /* Rounded corners. */
+    box-shadow: 0 8px 28px rgba(32,102,172,0.14);
+    /* Large, subtle blue shadow for a lifted effect. */
+    padding: 40px 25px;
+    /* Internal spacing (top/bottom: 40px, left/right: 25px). */
+    width: 100%;
+    /* Takes up full width of its parent (up to max-width). */
+    max-width: 420px;
+    /* Limits the card's width on large screens. */
+    box-sizing: border-box;
+    /* Includes padding and border in the element's total width and height. */
+    text-align: center;
+    /* Centers text and inline elements inside the card. */
+    margin: 40px 0;
+    /* Adds vertical margin to ensure some space on small screens, even with min-height. */
 }
 
 /* === Image Styling (Profile Picture) === */
 img.logo {
-    /* Targets <img> elements with the class 'logo' (the profile picture). */
-    width: 90px;
-    /* Sets a fixed size. */
-    margin-bottom: 20px;
-    /* Space below the image. */
-    border-radius: 50%;
-    /* Creates a perfect circle. */
-    box-shadow: 0 2px 12px rgba(32,102,172,0.18);
-    /* Subtle blue shadow for the image. */
-    border: 2px solid #2066AC;
-    /* Solid blue border around the image. */
+    /* Targets <img> elements with the class 'logo' (the profile picture). */
+    width: 90px;
+    /* Sets a fixed size. */
+    margin-bottom: 12px; /* **FIXED:** Reduced from 20px for tighter spacing */
+    /* Space below the image. */
+    border-radius: 50%;
+    /* Creates a perfect circle. */
+    box-shadow: 0 2px 12px rgba(32,102,172,0.18);
+    /* Subtle blue shadow for the image. */
+    border: 2px solid #2066AC;
+    /* Solid blue border around the image. */
 }
 
 /* === Divider Line Styles === */
 .hr-section {
-    /* Styles a divider used between main sections (if present in HTML). */
-    border: none;
-    /* Removes the default browser border. */
-    border-top: 1px solid #e2e9f3;
-    /* Creates a single, light gray line at the top. */
-    margin: 24px 0;
-    /* Vertical space around the divider. */
+    /* Styles a divider used between main sections (if present in HTML). */
+    border: none;
+    /* Removes the default browser border. */
+    border-top: 1px solid #e2e9f3;
+    /* Creates a single, light gray line at the top. */
+    margin: 24px 0;
+    /* Vertical space around the divider. */
 }
 
 .footer-divider {
-    /* Styles a specific divider used above the footer text. */
-    border: none;
-    border-top: 1px solid #dde3ea;
-    /* Creates a single, slightly darker light gray line. */
-    margin: 30px 0 14px 0;
-    /* Custom vertical spacing. */
+    /* Styles a specific divider used above the footer text. */
+    border: none;
+    border-top: 1px solid #dde3ea;
+    /* Creates a single, slightly darker light gray line. */
+    margin: 30px 0 14px 0;
+    /* Custom vertical spacing. */
 }
 
 /* === Heading Grouping and Base Margins === */
 h1, h2, .contact-details-block {
-    /* Groups all headings and the contact block for consistent top margin removal. */
-    margin-top: 0;
-    /* Removes default top margin for clean stacking. */
-    margin-bottom: 14px;
-    /* Sets a consistent bottom margin. */
+    /* Groups all headings and the contact block for consistent top margin removal. */
+    margin-top: 0;
+    /* Removes default top margin for clean stacking. */
+    margin-bottom: 8px; /* **FIXED:** Reduced from 14px for tighter spacing */
+    /* Sets a consistent bottom margin. */
 }
 
 /* === H1 (Main Name) Styling === */
 h1 {
-    /* Styles the main name element. */
-    font-size: 2em;
-    /* Large font size (2 times the base font size). */
-    color: #2066AC;
-    /* Zurich Blue color. */
-    font-weight: 700;
-    /* Bold font weight. */
-    letter-spacing: 1px;
-    /* Slightly increases the spacing between letters. */
+    /* Styles the main name element. */
+    font-size: 2em;
+    /* Large font size (2 times the base font size). */
+    color: #2066AC;
+    /* Zurich Blue color. */
+    font-weight: 700;
+    /* Bold font weight. */
+    letter-spacing: 1px;
+    /* Slightly increases the spacing between letters. */
 }
 
 /* === H2 (Titles) Styling === */
 h2 {
-    /* Styles the job title and location elements. */
-    font-size: 1.12em;
-    /* Slightly larger than base font size. */
-    color: #555;
-    /* Dark gray text color. */
-    font-weight: 500;
-    /* Semi-bold font weight. */
+    /* Styles the job title and location elements. */
+    font-size: 1.12em;
+    /* Slightly larger than base font size. */
+    color: #555;
+    /* Dark gray text color. */
+    font-weight: 500;
+    /* Semi-bold font weight. */
 }
 
 h2.bold {
-    /* Targets H2 elements that should be extra bold (e.g., the job title). */
-    font-weight: 700;
-    /* Sets it to a heavy bold. */
+    /* Targets H2 elements that should be extra bold (e.g., the job title). */
+    font-weight: 700;
+    /* Sets it to a heavy bold. */
 }
 
 /* === Contact Details Block Layout === */
 .contact-details-block {
-    /* Overrides the group margin for more precise control. */
-    text-align: center;
-    /* Centers the contents. */
-    margin: 0 0 14px 0;
-    /* Removes top margin, sets bottom margin. */
-    padding: 0;
+    /* Overrides the group margin for more precise control. */
+    text-align: center;
+    /* Centers the contents. */
+    margin: 0 0 8px 0; /* **FIXED:** Consistent with h1, h2 group */
+    /* Removes top margin, sets bottom margin. */
+    padding: 0;
 }
 
 .contact-item {
-    /* Styles the paragraph holding the phone/email. */
-    font-size: 1em;
-    color: #000000;
-    /* Black text color. */
-    text-align: center;
-    margin: 0 0 8px 0;
-    /* Small bottom margin between items. */
-    line-height: 1.4;
-    /* Vertical spacing between lines of text. */
+    /* Styles the paragraph holding the phone/email. */
+    font-size: 1em;
+    color: #000000;
+    /* Black text color. */
+    text-align: center;
+    margin: 0 0 8px 0;
+    /* Small bottom margin between items. */
+    line-height: 1.4;
+    /* Vertical spacing between lines of text. */
 }
 
 .contact-item:last-child {
-    /* Pseudo-class: Targets only the last contact-item in its group. */
-    margin-bottom: 0;
-    /* Removes the bottom margin from the last item to prevent excessive space. */
+    /* Pseudo-class: Targets only the last contact-item in its group. */
+    margin-bottom: 0;
+    /* Removes the bottom margin from the last item to prevent excessive space. */
 }
 
 .contact-item a {
-    /* Targets the links (phone number and email). */
-    color: #0033A0;
-    /* A standard blue link color. */
-    text-decoration: none;
-    /* Removes the default underline from links. */
-    white-space: nowrap;
-    /* Prevents the link text from wrapping to the next line. */
+    /* Targets the links (phone number and email). */
+    color: #0033A0;
+    /* A standard blue link color. */
+    text-decoration: none;
+    /* Removes the default underline from links. */
+    white-space: nowrap;
+    /* Prevents the link text from wrapping to the next line. */
 }
 
 .contact-item a:hover {
-    /* Pseudo-class: Styles the link when the mouse hovers over it. */
-    text-decoration: underline;
-    /* Adds an underline on hover for user feedback. */
+    /* Pseudo-class: Styles the link when the mouse hovers over it. */
+    text-decoration: underline;
+    /* Adds an underline on hover for user feedback. */
 }
 
 /* === Button Styling (Call-to-Action Links) === */
 .button {
-    /* Styles all elements with the class 'button'. */
-    display: inline-block;
-    /* Allows padding/margins while maintaining flow, like a block element. */
-    background-color: rgba(32, 102, 172, 0.8); /* UPDATED: Zurich Blue with 80% opacity (20% transparent) */
-    /* Solid background color (Zurich Blue). */
-    color: white;
-    /* White text color. */
-    text-decoration: none;
-    /* Removes underline. */
-    padding: 16px 0;
-    /* Vertical padding (top/bottom: 16px, left/right: 0). */
-    margin: 10px 0;
-    /* Vertical spacing between buttons. */
-    border-radius: 8px;
-    /* Rounded corners. */
-    font-size: 1.04em;
-    /* Slightly increased font size. */
-    width: 90%;
-    /* Button width relative to its parent container. */
-    max-width: 340px;
-    /* Maximum button width. */
-    transition: background-color 0.2s, box-shadow 0.2s, transform 0.18s;
-    /* Defines smooth transitions for multiple properties (hover effects). */
-    box-shadow: 0 2px 10px rgba(32,102,172,0.13);
-    /* Subtle shadow. */
-    position: relative;
-    /* Establishes a positioning context for the z-index. */
-    z-index: 10;
-    /* Ensures buttons appear above any elements with a lower z-index. */
+    /* Styles all elements with the class 'button'. */
+    display: inline-block;
+    /* Allows padding/margins while maintaining flow, like a block element. */
+    background-color: rgba(32, 102, 172, 0.8); /* UPDATED: Zurich Blue with 80% opacity (20% transparent) */
+    /* Solid background color (Zurich Blue). */
+    color: white;
+    /* White text color. */
+    text-decoration: none;
+    /* Removes underline. */
+    padding: 16px 0;
+    /* Vertical padding (top/bottom: 16px, left/right: 0). */
+    margin: 12px 0; /* **FIXED:** Increased from 10px for better vertical separation */
+    /* Vertical spacing between buttons. */
+    border-radius: 8px;
+    /* Rounded corners. */
+    font-size: 1.04em;
+    /* Slightly increased font size. */
+    width: 90%;
+    /* Button width relative to its parent container. */
+    max-width: 340px;
+    /* Maximum button width. */
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.18s;
+    /* Defines smooth transitions for multiple properties (hover effects). */
+    box-shadow: 0 2px 10px rgba(32,102,172,0.13);
+    /* Subtle shadow. */
+    position: relative;
+    /* Establishes a positioning context for the z-index. */
+    z-index: 10;
+    /* Ensures buttons appear above any elements with a lower z-index. */
 }
 
 .button:hover {
-    /* Styles the button when the mouse hovers over it. */
-    background-color: rgba(26, 82, 137, 0.85); /* UPDATED: Darker Zurich Blue with 85% opacity */
-    /* Slightly darker blue on hover. */
-    box-shadow: 0 4px 20px rgba(32,102,172,0.17);
-    /* Larger shadow on hover. */
-    transform: scale(1.04);
-    /* Gently scales the button up to give an interactive "pop" effect. */
+    /* Styles the button when the mouse hovers over it. */
+    background-color: rgba(26, 82, 137, 0.85); /* UPDATED: Darker Zurich Blue with 85% opacity */
+    /* Slightly darker blue on hover. */
+    box-shadow: 0 4px 20px rgba(32,102,172,0.17);
+    /* Larger shadow on hover. */
+    transform: scale(1.04);
+    /* Gently scales the button up to give an interactive "pop" effect. */
 }
 
 /* === Primary Action Button Styling (Selected on Load) === */
 .button.primary-action {
-    /* This style makes the 'Save Contact' button stand out */
-    background-color: #2066AC; /* Solid Zurich Blue */
-    font-weight: 700;
-    /* A distinct, more vibrant box shadow with a slight color glow */
-    box-shadow: 0 4px 18px rgba(32, 102, 172, 0.45);
-    transform: scale(1.02); /* Start slightly scaled up */
+    /* This style makes the 'Save Contact' button stand out */
+    background-color: #2066AC; /* Solid Zurich Blue */
+    font-weight: 700;
+    /* A distinct, more vibrant box shadow with a slight color glow */
+    box-shadow: 0 4px 18px rgba(32, 102, 172, 0.45);
+    transform: scale(1.02); /* Start slightly scaled up */
 }
 
 .button.primary-action:hover {
-    /* Enhances the effect on hover */
-    background-color: #1a528a; /* Slightly darker solid blue on hover */
-    box-shadow: 0 6px 24px rgba(32, 102, 172, 0.6);
-    transform: scale(1.05);
+    /* Enhances the effect on hover */
+    background-color: #1a528a; /* Slightly darker solid blue on hover */
+    box-shadow: 0 6px 24px rgba(32, 102, 172, 0.6);
+    transform: scale(1.05);
 }
 
 /* === Icon Image Styling (NEW) 🖼️ === */
 .icon-image {
-    /* Targets the image elements used as icons within the buttons */
-    width: 25px; 
-    /* Set a consistent size for the icons */
-    height: 25px;
-    
-    /* Add space between the icon and the text */
-    margin-right: 10px;
-    
-    /* Ensure the image is aligned correctly with the button text */
-    vertical-align: middle; 
+    /* Targets the image elements used as icons within the buttons */
+    width: 25px; 
+    /* Set a consistent size for the icons */
+    height: 25px;
+    
+    /* Add space between the icon and the text */
+    margin-right: 10px;
+    
+    /* Ensure the image is aligned correctly with the button text */
+    vertical-align: middle; 
 }
 
 
 /* === Modal (Pop-up Instructions) Styles === */
 .modal-overlay {
-    /* Styles the entire screen overlay. */
-    position: fixed;
-    /* Fixes it to the viewport. */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    /* Semi-transparent black background. */
-    display: none;
-    /* Initially hidden by default, before JS activation. */
-    align-items: center;
-    justify-content: center;
-    /* Center the modal content horizontally and vertically. */
-    z-index: 1000;
-    /* Ensures it is always on top of the page content. */
-    opacity: 0;
-    /* Starts fully transparent. */
-    visibility: hidden;
-    /* Ensures it is not focusable or clickable when hidden. */
-    transition: opacity 0.3s, visibility 0.3s;
-    /* Smooth fade-in/out effect. */
+    /* Styles the entire screen overlay. */
+    position: fixed;
+    /* Fixes it to the viewport. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black background. */
+    display: none;
+    /* Initially hidden by default, before JS activation. */
+    align-items: center;
+    justify-content: center;
+    /* Center the modal content horizontally and vertically. */
+    z-index: 1000;
+    /* Ensures it is always on top of the page content. */
+    opacity: 0;
+    /* Starts fully transparent. */
+    visibility: hidden;
+    /* Ensures it is not focusable or clickable when hidden. */
+    transition: opacity 0.3s, visibility 0.3s;
+    /* Smooth fade-in/out effect. */
 }
 
 .modal-overlay.visible {
-    /* Styles applied when JavaScript adds the 'visible' class. */
-    opacity: 1;
-    /* Makes it fully opaque. */
-    visibility: visible;
-    /* Makes it clickable/visible. */
-    display: flex;
-    /* Overrides the 'display: none;' to show the flex layout. */
+    /* Styles applied when JavaScript adds the 'visible' class. */
+    opacity: 1;
+    /* Makes it fully opaque. */
+    visibility: visible;
+    /* Makes it clickable/visible. */
+    display: flex;
+    /* Overrides the 'display: none;' to show the flex layout. */
 }
 
 .modal-content {
-    /* Styles the white box inside the overlay. */
-    background: #F8F6F4; /* Matches card background */
-    padding: 30px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 350px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    /* Shadow for the box. */
-    transform: translateY(-50px);
-    /* Starts 50px higher than final position for the slide-down effect. */
-    transition: transform 0.3s;
-    /* Smooth transition for the slide effect. */
+    /* Styles the white box inside the overlay. */
+    background: #F8F6F4; /* Matches card background */
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Shadow for the box. */
+    transform: translateY(-50px);
+    /* Starts 50px higher than final position for the slide-down effect. */
+    transition: transform 0.3s;
+    /* Smooth transition for the slide effect. */
 }
 
 .modal-overlay.visible .modal-content {
-    /* Targets the content box when the overlay is visible. */
-    transform: translateY(0);
-    /* Slides the box down to its final centered position. */
+    /* Targets the content box when the overlay is visible. */
+    transform: translateY(0);
+    /* Slides the box down to its final centered position. */
 }
 
 .modal-header {
-    /* Styles the main title inside the modal. */
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #2066AC;
-    /* Zurich Blue color retained for brand accent */
-    margin-top: 0;
-    margin-bottom: 10px;
+    /* Styles the main title inside the modal. */
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #2066AC;
+    /* Zurich Blue color retained for brand accent */
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .modal-tip {
-    /* Styles the box containing the instructions. */
-    font-size: 0.9em;
-    font-weight: 500;
-    color: #444;
-    margin-top: 15px;
-    line-height: 1.4;
-    border: 1px solid #eaf4fc;
-    /* Very light blue border. */
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #f8fbfd;
-    /* Very light blue background for the tips box. */
+    /* Styles the box containing the instructions. */
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #444;
+    margin-top: 15px;
+    line-height: 1.4;
+    border: 1px solid #eaf4fc;
+    /* Very light blue border. */
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f8fbfd;
+    /* Very light blue background for the tips box. */
 }
 
 .modal-divider {
-    /* Styles the divider inside the modal. */
-    border: none;
-    border-top: 1px solid #e2e9f3;
-    margin: 10px auto 15px auto;
-    width: 80%;
-    /* Shorter width to center the divider. */
+    /* Styles the divider inside the modal. */
+    border: none;
+    border-top: 1px solid #e2e9f3;
+    margin: 10px auto 15px auto;
+    width: 80%;
+    /* Shorter width to center the divider. */
 }
 
 /* === Loader (Spinner) Styling === */
 .loader {
-    /* Styles the spinning circle animation displayed during the modal delay. */
-    border: 3px solid #f3f3f3;
-    /* Light color for the base circle. */
-    border-top: 3px solid #2066AC; /* Zurich Blue */
-    /* Blue color for the top arc, creating the spinner effect. */
-    border-radius: 50%;
-    /* Creates a circle. */
-    width: 20px;
-    height: 20px;
-    animation: spin 1s linear infinite;
-    /* Applies the 'spin' animation infinitely. */
-    margin: 20px auto 0;
+    /* Styles the spinning circle animation displayed during the modal delay. */
+    border: 3px solid #f3f3f3;
+    /* Light color for the base circle. */
+    border-top: 3px solid #2066AC; /* Zurich Blue */
+    /* Blue color for the top arc, creating the spinner effect. */
+    border-radius: 50%;
+    /* Creates a circle. */
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    /* Applies the 'spin' animation infinitely. */
+    margin: 20px auto 0;
 }
 
 @keyframes spin {
-    /* Defines the 'spin' animation keyframes. */
-    0% { transform: rotate(0deg); }
-    /* Start position. */
-    100% { transform: rotate(360deg); }
-    /* End position (full rotation). */
+    /* Defines the 'spin' animation keyframes. */
+    0% { transform: rotate(0deg); }
+    /* Start position. */
+    100% { transform: rotate(360deg); }
+    /* End position (full rotation). */
 }
 
 /* === Footer Reveal (Scroll Animation) Styling === */
 .footer-reveal {
-    /* Styles the footer container, intended to fade in. */
-    opacity: 0;
-    /* Starts hidden/transparent. */
-    transform: translateY(25px); /* INCREASED: For pronounced effect */
-    /* Starts slightly below its final position. */
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* FASTER: For pronounced effect */
-    /* Smooth transition for the fade-in/slide-up effect. */
+    /* Styles the footer container, intended to fade in. */
+    opacity: 0;
+    /* Starts hidden/transparent. */
+    transform: translateY(25px); /* INCREASED: For pronounced effect */
+    /* Starts slightly below its final position. */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* FASTER: For pronounced effect */
+    /* Smooth transition for the fade-in/slide-up effect. */
 }
 
 .footer-reveal.visible {
-    /* Styles applied when JavaScript adds the 'visible' class. */
-    opacity: 1;
-    /* Makes it fully visible. */
-    transform: translateY(0);
-    /* Slides it up to its final position. */
+    /* Styles applied when JavaScript adds the 'visible' class. */
+    opacity: 1;
+    /* Makes it fully visible. */
+    transform: translateY(0);
+    /* Slides it up to its final position. */
 }
 
 /* === Media Queries (Responsive Design) === */
 @media (max-width: 500px) {
-    /* Styles applied when the viewport is 500px wide or less (e.g., mobile phones). */
-    .card {
-        padding: 22px 8px;
-        /* Reduces padding on smaller screens. */
-        margin: 18px 0;
-        /* Reduces margin. */
-    }
-    .background-accent {
-        padding: 0;
-        /* Ensures no extra padding pushes the card. */
-    }
-    img.logo {
-        width: 70px;
-        /* Reduces the profile picture size. */
-        margin-bottom: 14px;
-        /* Reduces margin below the image. */
-    }
-    h1 {
-        font-size: 1.36em;
-        /* Reduces the main name font size. */
-    }
-    h2 {
-        font-size: 0.98em;
-        /* Reduces the title font size. */
-    }
-    .button {
-        font-size: 0.95em;
-        /* Reduces button text size. */
-        padding: 12px 0;
-        /* Reduces button vertical padding. */
-    }
+    /* Styles applied when the viewport is 500px wide or less (e.g., mobile phones). */
+    .card {
+        padding: 22px 8px;
+        /* Reduces padding on smaller screens. */
+        margin: 18px 0;
+        /* Reduces margin. */
+    }
+    .background-accent {
+        padding: 0;
+        /* Ensures no extra padding pushes the card. */
+    }
+    img.logo {
+        width: 70px;
+        /* Reduces the profile picture size. */
+        margin-bottom: 14px;
+        /* Reduces margin below the image. */
+    }
+    h1 {
+        font-size: 1.36em;
+        /* Reduces the main name font size. */
+    }
+    h2 {
+        font-size: 0.98em;
+        /* Reduces the title font size. */
+    }
+    .button {
+        font-size: 0.95em;
+        /* Reduces button text size. */
+        padding: 12px 0;
+        /* Reduces button vertical padding. */
+    }
 }
