@@ -41,11 +41,11 @@ body {
     /* Styles the container that holds the contact card and provides the animated background. */
     background: linear-gradient(
         135deg,
-        #D3E0EC 0%, /* Darker Blue-Gray Background */
-        #E0E6EB 25%, /* Lighter shade */
-        #D3E0EC 50%,
-        #E0E6EB 75%,
-        #D3E0EC 100%
+        #E4ECF4 0%, /* Light Blue-Gray Background */
+        #F0F4F7 25%, /* Lighter shade */
+        #E4ECF4 50%,
+        #F0F4F7 75%,
+        #E4ECF4 100%
     );
     /* Defines a linear gradient with multiple light blue/gray stops for subtle movement. */
     background-size: 400% 400%;
@@ -94,7 +94,7 @@ img.logo {
     /* Targets <img> elements with the class 'logo' (the profile picture). */
     width: 90px;
     /* Sets a fixed size. */
-    margin-bottom: 12px; /* **FIXED:** Reduced from 20px for tighter spacing */
+    margin-bottom: 20px;
     /* Space below the image. */
     border-radius: 50%;
     /* Creates a perfect circle. */
@@ -129,7 +129,7 @@ h1, h2, .contact-details-block {
     /* Groups all headings and the contact block for consistent top margin removal. */
     margin-top: 0;
     /* Removes default top margin for clean stacking. */
-    margin-bottom: 8px; /* **FIXED:** Reduced from 14px for tighter spacing */
+    margin-bottom: 14px;
     /* Sets a consistent bottom margin. */
 }
 
@@ -168,7 +168,7 @@ h2.bold {
     /* Overrides the group margin for more precise control. */
     text-align: center;
     /* Centers the contents. */
-    margin: 0 0 8px 0; /* **FIXED:** Consistent with h1, h2 group */
+    margin: 0 0 14px 0;
     /* Removes top margin, sets bottom margin. */
     padding: 0;
 }
@@ -220,7 +220,7 @@ h2.bold {
     /* Removes underline. */
     padding: 16px 0;
     /* Vertical padding (top/bottom: 16px, left/right: 0). */
-    margin: 12px 0; /* **FIXED:** Increased from 10px for better vertical separation */
+    margin: 10px 0;
     /* Vertical spacing between buttons. */
     border-radius: 8px;
     /* Rounded corners. */
@@ -248,23 +248,6 @@ h2.bold {
     /* Larger shadow on hover. */
     transform: scale(1.04);
     /* Gently scales the button up to give an interactive "pop" effect. */
-}
-
-/* === Primary Action Button Styling (Selected on Load) === */
-.button.primary-action {
-    /* This style makes the 'Save Contact' button stand out */
-    background-color: #2066AC; /* Solid Zurich Blue */
-    font-weight: 700;
-    /* A distinct, more vibrant box shadow with a slight color glow */
-    box-shadow: 0 4px 18px rgba(32, 102, 172, 0.45);
-    transform: scale(1.02); /* Start slightly scaled up */
-}
-
-.button.primary-action:hover {
-    /* Enhances the effect on hover */
-    background-color: #1a528a; /* Slightly darker solid blue on hover */
-    box-shadow: 0 6px 24px rgba(32, 102, 172, 0.6);
-    transform: scale(1.05);
 }
 
 /* === Icon Image Styling (NEW) 🖼️ === */
