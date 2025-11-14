@@ -129,7 +129,7 @@ h1, h2, .contact-details-block {
     /* Groups all headings and the contact block for consistent top margin removal. */
     margin-top: 0;
     /* Removes default top margin for clean stacking. */
-    margin-bottom: 14px;
+    margin-bottom: 8px; /* MODIFIED: Reduced from 14px to 8px for condensation */
     /* Sets a consistent bottom margin. */
 }
 
@@ -179,7 +179,7 @@ h2.bold {
     color: #000000;
     /* Black text color. */
     text-align: center;
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0; /* MODIFIED: Reduced from 8px to 4px for condensation */
     /* Small bottom margin between items. */
     line-height: 1.4;
     /* Vertical spacing between lines of text. */
