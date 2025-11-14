@@ -124,12 +124,12 @@ img.logo {
     /* Custom vertical spacing. */
 }
 
-/* === Heading Grouping and Base Margins (RESTORED ORIGINAL SPACING) === */
+/* === Heading Grouping and Base Margins === */
 h1, h2, .contact-details-block {
     /* Groups all headings and the contact block for consistent top margin removal. */
     margin-top: 0;
     /* Removes default top margin for clean stacking. */
-    margin-bottom: 14px; /* RESTORED: Original wider spacing */
+    margin-bottom: 14px;
     /* Sets a consistent bottom margin. */
 }
 
@@ -179,7 +179,7 @@ h2.bold {
     color: #000000;
     /* Black text color. */
     text-align: center;
-    margin: 0 0 8px 0; /* RESTORED: Original wider spacing */
+    margin: 0 0 8px 0;
     /* Small bottom margin between items. */
     line-height: 1.4;
     /* Vertical spacing between lines of text. */
@@ -258,7 +258,7 @@ h2.bold {
     height: 25px;
     
     /* Add space between the icon and the text */
-    margin-right: 4px; /* KEPT: Reduced from 10px to 4px as a slight safety measure */
+    margin-right: 10px;
     
     /* Ensure the image is aligned correctly with the button text */
     vertical-align: middle; 
