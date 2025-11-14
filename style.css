@@ -258,7 +258,7 @@ h2.bold {
     height: 25px;
     
     /* Add space between the icon and the text */
-    margin-right: 10px;
+    margin-right: 4px;
     
     /* Ensure the image is aligned correctly with the button text */
     vertical-align: middle; 
